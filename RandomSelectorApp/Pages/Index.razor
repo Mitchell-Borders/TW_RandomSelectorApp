@@ -1,5 +1,28 @@
 ﻿@page "/"
 
+<h1>Random Selector</h1>
+<input placeholder="Enter Value" @bind="ValueName" />
+<button @onclick="SubmitEntry">Submit Entry</button>
+<table>
+    <thead>
+        <tr>
+            <th>
+                Entered Values:
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var value in Values)
+        {
+            <tr>
+                <td>
+                    @value
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
 @code {
     public List<string> Values = new List<string>();
 
