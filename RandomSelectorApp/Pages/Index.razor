@@ -1,9 +1,12 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
+@code {
+    public List<string> Values = new List<string>();
 
-<h1>Hello, world!</h1>
+    public string ValueName { get; set; }
 
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+    public void SubmitEntry()
+    {
+        Values.Add(ValueName);
+    }
+}
