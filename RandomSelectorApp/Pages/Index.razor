@@ -4,6 +4,8 @@
 <input placeholder="Enter Value" @bind="ValueName" />
 <button @onclick="SubmitEntry">Submit Entry</button>
 <button @onclick="ClearEntries">Clear Entries</button>
+<button @onclick="GetRandomEntry">Get Random Entry</button>
+<label>Chosen Entry: @RandomChosenValue</label>
 <table>
     <thead>
         <tr>
@@ -29,6 +31,14 @@
 
     public string ValueName { get; set; }
 
+    public string RandomChosenValue { get; set; }
+
+    public void GetRandomEntry(){
+        Random numberGenerator = new Random();
+        RandomChosenValue = Values[numberGenerator.Next(0, Values.Count)];
+    }
+
+
     public void ClearEntries(){
         Values = new List<string>();
         ValueName = "";
@@ -36,5 +46,6 @@
     public void SubmitEntry()
     {
         Values.Add(ValueName);
+        ValueName = "";
     }
 }
