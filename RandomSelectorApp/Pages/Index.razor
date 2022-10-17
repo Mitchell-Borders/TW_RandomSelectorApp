@@ -3,6 +3,7 @@
 <h1>Random Selector</h1>
 <input placeholder="Enter Value" @bind="ValueName" />
 <button @onclick="SubmitEntry">Submit Entry</button>
+<button @onclick="ClearEntries">Clear Entries</button>
 <table>
     <thead>
         <tr>
@@ -28,6 +29,10 @@
 
     public string ValueName { get; set; }
 
+    public void ClearEntries(){
+        Values = new List<string>();
+        ValueName = "";
+    }
     public void SubmitEntry()
     {
         Values.Add(ValueName);
