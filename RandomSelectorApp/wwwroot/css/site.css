@@ -1,5 +1,27 @@
 @import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
+.display-horizontal{
+    display: flex;
+    flex-direction: row;
+}
+
+.display-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.margin-auto {
+    margin: auto;
+}
+
+tr:nth-of-type(even) {
+    background-color: #ddd;
+}
+
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
